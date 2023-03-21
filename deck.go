@@ -2,10 +2,11 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"math/rand"
 	"strings"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type Deck struct {
@@ -41,7 +42,7 @@ func (m *MemoryDeckService) CreateDeck(shuffled bool, cardsParam string) (*Deck,
 	}
 
 	deck := &Deck{
-		ID:        fmt.Sprintf("%d", rand.Int()),
+		ID:        uuid.New().String(),
 		Shuffled:  shuffled,
 		Remaining: len(cards),
 		Cards:     cards,

@@ -8,6 +8,11 @@ Install the Gorilla Mux package:
 ```bash
 $ go get -u github.com/gorilla/mux
 ```
+Install gooogle uuid package:
+```bash
+$ go get github.com/google/uuid
+```
+
 
 ## Running the app
 To run the server, execute the following command in the project directory:
