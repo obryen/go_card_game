@@ -25,6 +25,11 @@ To build the binary without running it, execute the following command in the pro
 $ make build
 ```
 
+To run unit tests:
+```bash
+$ make test
+```
+
 To clean the build directory, execute the following command in the project directory:
 ```bash
 $ make clean
