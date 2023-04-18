@@ -8,11 +8,12 @@ import (
 )
 
 func main() {
-	router := mux.NewRouter()
 
-	router.HandleFunc("/deck/new", DeckHandler).Methods("POST")
-	router.HandleFunc("/deck/{id}", DeckHandler).Methods("GET")
-	router.HandleFunc("/deck/{id}/draw", CardHandler).Methods("POST")
+	router := mux.NewRouter()
+	router.HandleFunc("/decks", CreateDeckHandler).Methods("POST")
+	router.HandleFunc("/decks/{deck_id}", OpenDeckHandler).Methods("GET")
+	router.HandleFunc("/decks/{deck_id}/cards", DrawCardsHandler).Methods("POST")
+	http.ListenAndServe(":8000", router)
 
 	log.Println("Starting server on port 8000")
 	log.Fatal(http.ListenAndServe(":8000", router))
